@@ -6,8 +6,6 @@
     android:orientation="vertical"
     android:id="@+id/main"
     >
-
-
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -21,60 +19,116 @@
             android:layout_height="100dp"
             app:srcCompat="@drawable/logo" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        >
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/arrowUp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <Space
-            android:layout_width="21dp"
-            android:layout_height="match_parent" />
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/arrow"/>
 
-        <Space
-            android:layout_width="72dp"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80"
-            app:srcCompat="@drawable/arrowRight"/>
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/arrowUp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/arrowUp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="21dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/arrowLeft"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/arrow" />
+
+            <Space
+                android:layout_width="72dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/arrowRight"
+                android:layout_width="80dp"
+                android:layout_height="80"
+                app:srcCompat="@drawable/arrowRight" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/arrowDown"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/arrowDown" />
+
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/rightSide"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Connection Status -->
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: Disconnected"
+                android:textSize="18sp"
+                android:textColor="#FF0000"
+                android:paddingBottom="16dp"
+                android:textAlignment="center"
+                />
+
+            <!-- STOP Button -->
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STOP"
+                android:textStyle="bold"
+                android:backgroundTint="#FF4444"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp"/>
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/arrowDown"/>
 
     </LinearLayout>
-</LinearLayout>
