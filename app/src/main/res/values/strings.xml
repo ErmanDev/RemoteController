@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RemoteControlCart</string>
+    <string name="stop">STOP</string>
+    <string name="go">GO</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connected">Connected</string>
 </resources>
