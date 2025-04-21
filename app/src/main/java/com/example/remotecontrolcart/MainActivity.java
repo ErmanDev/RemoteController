@@ -3,6 +3,7 @@ package com.example.remotecontrolcart;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -106,12 +107,15 @@ public class MainActivity extends AppCompatActivity {
         new Thread(() -> {
             try {
                 URL url = new URL(BASE_URL + "status");
+                Log.d("ConnectionTest", "Testing connection to: " + url); // Log the URL
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
-                conn.setConnectTimeout(1000);
-                conn.setReadTimeout(1000);
+                conn.setConnectTimeout(1000); // Connection timeout
+                conn.setReadTimeout(1000); // Read timeout
 
                 int responseCode = conn.getResponseCode();
+                Log.d("ConnectionTest", "Response Code: " + responseCode); // Log the response code
+
                 StringBuilder response = new StringBuilder();
                 try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                     String inputLine;
@@ -122,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 conn.disconnect();
 
                 runOnUiThread(() -> {
+                    Log.d("ConnectionTest", "Response: " + response.toString()); // Log the response body
                     if (responseCode == 200 && response.toString().contains("Pico")) {
                         statusText.setText("Status: Pico Connected");
                         statusText.setTextColor(Color.GREEN);
@@ -143,4 +148,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+
 }
